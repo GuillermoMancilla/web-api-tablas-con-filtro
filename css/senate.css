@@ -1,0 +1,83 @@
+body {
+    background: #ceecf5;
+}
+
+.row{
+    width: 100%;
+}
+
+h1{
+    margin-left: 5%;
+    margin-top: 8%;
+}
+
+h3 {
+    float: right;
+    margin-top: 8%;
+    margin-right: 3%;
+    border: rgba(6, 99, 55, 0.61) 5px solid;
+    background-color: rgba(248, 248, 248, 0.651);
+    opacity: 0.8;
+    border-radius: 20px;
+}
+
+.container-head {
+    height: 180px;
+    width: 100%;
+    background-image: url("../assets/capitol_wide_home1.jpg");
+    background-size: cover;
+}
+
+.lupita {
+    opacity: 0.3;
+    height: 60px;
+    width: 60px;
+}
+
+.maily {
+    opacity: 0.3;
+    height: 60px;
+    width: 60px;
+}
+
+.navbar .nav-item:not(:last-child) {
+    margin-right: 35px;
+}
+  
+.dropdown-toggle::after {
+     transition: transform 0.15s linear; 
+}
+  
+.show.dropdown .dropdown-toggle::after {
+    transform: translateY(3px);
+}
+  
+.dropdown-menu {
+    margin-top: 0;
+}
+
+#tabla {
+    background-color: #ceecf5;
+}
+
+.contenedor-tabla{
+    margin-left: 10%;
+    margin-top: 5%;
+    width: 80%;
+}
+
+tr, th, td {
+    text-align: center;
+}
+
+.namae {
+    text-decoration: none;
+}
+
+.container-texto {
+    margin: 3% 9% 3% 10%;
+}
+
+.jumbotron {
+    background-color: rgb(177, 226, 238);
+}

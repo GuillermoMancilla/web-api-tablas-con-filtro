@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>house-congres 113</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/dataTables.jqueryui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/dataTables.jqueryui.min.css">
+    <link rel="stylesheet" href="./css/congress.css">
+    </head>
+    <body>
+        <header>
+            <div class="container-head">    
+                <div class="row">
+                    <div class="col-sm-8">
+                        <h1><img src="./assets/lupa3.jpg" class="lupita"> TGIF</h1>
+                    </div>
+                    <div class="col-sm-4">
+                        <h3><a href="info@tgif.net?Subject=web%20page%20congress113"><img src="./assets/mail.png" class="maily">info@tgif.net</a></h3> 
+                    </div>
+                </div>
+            </div>
+        </header>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-5">
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Congress 113
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                        <a class="dropdown-item" href="./house.html">House</a>
+                        <a class="dropdown-item" href="./senate.html">Senate</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Attendance
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                        <a class="dropdown-item" href="./houseat.html">House</a>
+                        <a class="dropdown-item" href="./senateat.html">Senate</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Party Loyalty
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown4">
+                        <a class="dropdown-item" href="./houseloy.html">House</a>
+                        <a class="dropdown-item" href="./senateloy.html">Senate</a>
+                    </div>
+                </li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+        <div id="app" class="contenedor-cuerpo">
+                <div class="container-texto">
+                    <h2>{{titulo}}</h2>
+                    <p>{{text1}}</p>
+                    <p>{{text2}}</p>
+                </div>
+            <div class="contenedor-tabla">
+                <table id="example" class="display" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Party</th>
+                            <th>State</th>
+                            <th>Years in office</th>
+                            <th>% Votes w/party</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(p, i) in otraLista">
+                            <td><a v-bind:href="p.url"><b>{{p.name}}</b></a></td>
+                            <td v-text="p.party"></td>
+                            <td v-text="p.state"></td>
+                            <td v-text="p.years"></td>
+                            <td>{{p.votewp}}%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div><br><br>
+        <footer>
+            <div class="foot">
+                <div class="jumbotron text-center" style="margin-bottom:0">
+                    <p>Copyright (c) 2021 Pro Publica Inc. All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.5.1/vue-resource.min.js"></script>
+    <script src="./js/congress.js"></script>
+</body>
+</html>

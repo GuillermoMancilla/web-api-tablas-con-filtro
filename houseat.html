@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>House-Attendance</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./css/styleatloy.css">
+    </head>
+    <body>
+        <header>
+            <div class="container-head">    
+                <div class="row">
+                    <div class="col-sm-8">
+                        <h1><img src="./assets/lupa3.jpg" class="lupita"> TGIF</h1>
+                    </div>
+                    <div class="col-sm-4">
+                        <h3><a href="info@tgif.net?Subject=web%20page%20congress113"><img src="./assets/mail.png" class="maily">info@tgif.net</a></h3> 
+                    </div>
+                </div>
+            </div>
+        </header>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-5">
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Congress 113
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                        <a class="dropdown-item" href="./house.html">House</a>
+                        <a class="dropdown-item" href="./senate.html">Senate</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Attendance
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                        <a class="dropdown-item" href="./houseat.html">House</a>
+                        <a class="dropdown-item" href="./senateat.html">Senate</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Party Loyalty
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown4">
+                        <a class="dropdown-item" href="./houseloy.html">House</a>
+                        <a class="dropdown-item" href="./senateloy.html">Senate</a>
+                    </div>
+                </li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+        <div id="app">
+            <div class="container-texto">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <br><h2>{{titulo}}</h2><br>
+                        <p>{{text1}}</p>
+                        <p>{{text2}}</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <h2>{{tabla}}</h2>
+                        <table id="example" class="display" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Party</th>
+                                    <th>Number of Reps</th>
+                                    <th>% Voted with Prty</th>
+                                </tr>
+                            </thead>
+                            <tbody v-for="est of estadistica">
+                                <tr >
+                                    <th scope="row">Democrats</td>
+                                    <td>{{est.democratas}}</td>
+                                    <td>{{est.porcD}}%</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Republicans</td>
+                                    <td>{{est.republicanos}}</td>
+                                    <td>{{est.porcR}}%</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Independents</td>
+                                    <td>{{est.independiente}}</td>
+                                    <td>{{est.porcI}}%</td>
+                                </tr>
+                                <tr>                   
+                                    <th scope="row">Total</td>
+                                    <td>{{est.cant}}</td>
+                                    <td>100%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="testu2">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h2>Least Engaged (Bottom 10% Attendance)</h2>
+                        <table id="example2" class="display" style="width:85%">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>No. missed votes</th>
+                                    <th>% Missed</th>
+                                </tr>
+                            </thead>
+                            <tbody v-for="arre of estadistica">
+                                <tr v-for="y of arre.array2">
+                                    <td><a v-bind:href="y.url"><b>{{y.first_name}} {{y.last_name}}</b></a></td>
+                                    <td>{{y.missed_votes}}</td>
+                                    <td>{{y.missed_votes_pct}}%</td>
+                                </tr>
+                              </tbody>
+                        </table>
+                        <br>
+                    </div>
+                    <div class="col-sm-6">
+                        <h2>Most Engaged (Top 10% Attendance)</h2>
+                        <table id="example3" class="display" style="width:85%">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>No. missed votes</th>
+                                    <th>% Missed</th>
+                                </tr>
+                            </thead>
+                            <tbody v-for="arr of estadistica">
+                                <tr v-for="t of arr.array1">
+                                    <td><a v-bind:href="t.url"><b>{{t.first_name}} {{t.last_name}}</b></a></td>
+                                    <td>{{t.missed_votes}}</td>
+                                    <td>{{t.missed_votes_pct}}%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div><br><br>
+        <footer class="foot">
+            <div class="foot">
+                <div class="jumbotron text-center" style="margin-bottom:0">
+                    <p>Copyright (c) 2021 Pro Publica Inc. All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.5.1/vue-resource.min.js"></script>
+        <script src="./js/houatt.js"></script>
+    </body>
+</html>
